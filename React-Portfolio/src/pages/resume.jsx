@@ -1,43 +1,31 @@
-import React from "react";
-import "./CSS/resume.css"; 
+import '../pages/CSS/resume.css';
 
-function Resume() {
-  const buttonClick = () => {
-    const resumeUrl = "/Resume.pdf"; // File should be in the public folder
-    const fileName = "Resume.pdf";
-    const anchor = document.createElement("a");
-    anchor.href = resumeUrl;
-    anchor.download = fileName;
-    document.body.appendChild(anchor);
-    anchor.click();
-    document.body.removeChild(anchor);
-  };
+export default function Resume() {
+    const downloadResume = () => {
+        const pdfUrl = "Resume.pdf";
+        const link = document.createElement("a");
+        link.href = pdfUrl;
+        link.download = "Resume.pdf";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
 
-  return (
-    <div className="container">
-      <div className="resume-card">
-        <h2 className="resume-title">My Resume</h2>
-        <p className="resume-description">
-          Download my resume or explore the skills I’ve mastered.
-        </p>
-        <div className="skills-section">
-          <h4 className="skills-title">Technical Skills</h4>
-          <ul className="skills-list">
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>TypeScript</li>
-            <li>Node.js</li>
-            <li>SQL</li>
-            <li>React</li>
-          </ul>
+    return (
+        <div className="resume">
+            <h3>Skills & Technologies</h3>
+            <div className="skills-list">
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>React</li>
+                    <li>Node.js</li>
+                    <li>MongoDB</li>
+                    <li>SQL</li>
+                </ul>
+            </div>
+            <button onClick={downloadResume}>Download Resume</button>
         </div>
-        <button onClick={buttonClick} className="download-button">
-          Download Resume
-        </button>
-      </div>
-    </div>
-  );
+    );
 }
-
-export default Resume;

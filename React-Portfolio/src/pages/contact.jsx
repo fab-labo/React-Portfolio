@@ -1,78 +1,48 @@
-// Imports necessary Functions & Dependencies
 import { useState } from 'react';
-import { validateEmail } from '../../utils/helpers';
+import '../pages/CSS/contact.css';
 
-// Creates a Form
 export default function Contact() {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('');
-    const [errorMessage, setErrorMessage] = useState('');
+    const [formData, setFormData] = useState({ name: "", email: "", message: "" });
 
-    const handleInputChange = (e) => {
-        const {target} = e;
-        const inputType = target.name;
-        const inputValue = target.value;
-
-        if (inputType === 'email') {
-            setEmail(inputValue);
-        } else if (inputType === 'name') {
-            setName(inputValue);
-        } else if (inputType === 'message') {
-            setMessage(inputValue);
-        }
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleFormSubmit = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        if (!name || !email || !message) {
-            setErrorMessage('Please fill out all forms before submitting');
-            return;
-        } else if (!validateEmail(email)) {
-            setErrorMessage('Email is invalid');
-            return;
-        }
-        alert(`Thank you for submitting, ${name}!`);
-        setName('');
-        setEmail('');
-        setMessage('');
+        alert("Message sent successfully! 🚀");
     };
 
     return (
-        <div className="container text-center">
-            <h2>Send me your feedback!</h2>
-            <form className="form" onSubmit={handleFormSubmit}>
+        <div className="contact-container">
+            <h2>Contact Me</h2>
+            <form className="contact-form" onSubmit={handleSubmit}>
                 <input
-                    value={name}
+                    type="text"
                     name="name"
-                    onChange={handleInputChange}
-                    type="name"
-                    placeholder="name"
-                    className="form-control"
+                    placeholder="Your Name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
                 />
                 <input
-                    value={email}
-                    name="email"
-                    onChange={handleInputChange}
                     type="email"
-                    placeholder="email"
-                    className="form-control"
+                    name="email"
+                    placeholder="Your Email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
                 />
-                <input
-                    value={message}
+                <textarea
                     name="message"
-                    onChange={handleInputChange}
-                    type="message"
-                    placeholder="message"
-                    className="form-control"
-                />
-                <button type="submit" className="btn btn-primary">Submit</button>
+                    rows="4"
+                    placeholder="Your Message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                ></textarea>
+                <button type="submit">Send Message</button>
             </form>
-            {errorMessage && (
-                <div>
-                    <p className="error-text">{errorMessage}</p>
-                </div>
-            )}
         </div>
     );
 }

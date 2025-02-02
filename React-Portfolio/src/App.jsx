@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
-import NavBar from './components/NavBar';
-import Footer from  './components/footer';
+import NavBar from '../src/Components/NavBar';
+import Footer from  '../src/Components/footer';
 
 
 
@@ -10,9 +10,9 @@ function App() {
   return (
     <>
       <NavBar />
-      <main className="d-flex justify-content-center page">
+      <div className="main-content">
         <Outlet />
-      </main>
+      </div>
       <Footer />
     </>
   )

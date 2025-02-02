@@ -1,81 +1,61 @@
-/* Apple-inspired styles */
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background: linear-gradient(to bottom, #f9f9f9, #eaeaea);
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .container {
-    width: 100%;
-    max-width: 600px;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-  
-  .resume-card {
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    text-align: center;
-  }
-  
-  .resume-title {
-    font-size: 24px;
-    font-weight: 600;
-    color: #333;
-  }
-  
-  .resume-description {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 20px;
-  }
-  
-  .skills-section {
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .skills-title {
-    font-size: 18px;
-    font-weight: 500;
-    color: #444;
-    margin-bottom: 10px;
-  }
-  
-  .skills-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .skills-list li {
-    font-size: 16px;
-    color: #555;
-    margin: 5px 0;
-  }
-  
-  .download-button {
-    background: linear-gradient(to bottom, #007aff, #0051c8);
-    color: white;
-    font-size: 16px;
-    font-weight: 500;
-    border: none;
-    border-radius: 12px;
-    padding: 10px 20px;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0, 122, 255, 0.4);
-    transition: all 0.3s ease;
-  }
-  
-  .download-button:hover {
-    background: linear-gradient(to bottom, #0051c8, #003a99);
-    box-shadow: 0 8px 20px rgba(0, 122, 255, 0.6);
-  }
-  
+/* 🔹 Resume Container */
+.resume {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 40px;
+  width: 90%;
+  max-width: 700px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  margin: 60px auto;
+}
+
+/* 🔹 Header */
+.resume h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* 🔹 Skills List */
+.skills-list {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.skills-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.skills-list li {
+  background: rgba(0, 0, 0, 0.05);
+  padding: 10px;
+  border-radius: 8px;
+  margin: 5px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.skills-list li:hover {
+  background: #007aff;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* 🔹 Download Button */
+button {
+  background: #007aff;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background: #005ecb;
+  transform: scale(1.05);
+}

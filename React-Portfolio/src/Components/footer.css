@@ -1,0 +1,63 @@
+/* 🔹 Footer Container */
+.footer {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9); /* Glassmorphism */
+    backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+/* 🔹 Footer Links */
+.footer-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #1d1d1f;
+    font-size: 1rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer a:hover {
+    color: #007aff; /* Apple Blue */
+}
+
+/* 🔹 Social Icons */
+.footer-icons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-icons a {
+    font-size: 1.5rem;
+    color: #555;
+    transition: transform 0.3s ease-in-out;
+}
+
+.footer-icons a:hover {
+    color: #007aff;
+    transform: scale(1.1);
+}
+
+/* 🔹 Copyright */
+.footer p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* 🔹 Responsive */
+@media (max-width: 768px) {
+    .footer-links {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+}

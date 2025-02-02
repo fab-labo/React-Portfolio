@@ -1,0 +1,63 @@
+/* 🔹 About Me Section */
+.aboutme {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.aboutme:hover {
+    transform: scale(1.02);
+}
+
+/* 🔹 Title */
+.aboutme h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 20px;
+}
+
+/* 🔹 Profile Image */
+/* 🔹 Profile Image */
+.aboutme img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover; /* Ensures the image fills the area */
+    object-position: center top; /* ✅ Adjusts focus to center your face */
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* 🔹 Text */
+.aboutme p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #555;
+    padding: 0 20px;
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 768px) {
+    .aboutme {
+        padding: 20px;
+    }
+    
+    .aboutme h1 {
+        font-size: 2rem;
+    }
+
+    .aboutme p {
+        font-size: 1rem;
+    }
+}

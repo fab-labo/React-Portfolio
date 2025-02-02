@@ -1,11 +1,12 @@
 import PropTypes from "prop-types";
 import { AiFillGithub } from "react-icons/ai";
+import '../Components/projectcard.css'
 
-function PortfolioCard({title, image, githubLink, deployedLink}) {
+function PortfolioCard({title, previewImage, githubLink, deployedLink}) {
     return (
         <div className="card-container">
             <div className="image-container">
-                <img src={image} alt={title} className="project-image"/>
+                <img src={previewImage} alt={title} className="project-image"/>
                 <div className="title">
                     {deployedLink ? (
                         <a href={deployedLink} target="_blank" rel="noopener noreferer" className="project-link">
@@ -25,9 +26,9 @@ function PortfolioCard({title, image, githubLink, deployedLink}) {
 
 PortfolioCard.propTypes = {
     title: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
+    previewImage: PropTypes.string.isRequired,
     githubLink: PropTypes.string.isRequired,
-    deployedLink: PropTypes.string.isRequired,
+    deployedLink: PropTypes.string,
 };
 
 export default PortfolioCard;

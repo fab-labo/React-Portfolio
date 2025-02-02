@@ -1,18 +1,25 @@
-import { AiOutlineGithub } from 'react-icons/ai';
-import { AiOutlineLinkedin } from 'react-icons/ai';
-
+import { AiOutlineGithub, AiOutlineLinkedin } from 'react-icons/ai';
+import '../Components/footer.css';
 
 function Footer() {
     return (
-        <footer className='footer fixed-bottom text-center'>
-            <a href='https://github.com/fab-labo' target='_blank' rel='noopener noreferrer'>
-                <AiOutlineGithub size={40}/>
-            </a>
-            <a href='www.linkedin.com/in/fabriciolaboriel' target='_blank' rel='noopener noreferrer'>
-                <AiOutlineLinkedin size={40}/>
-            </a>
+        <footer className='footer'>
+            <div className="footer-links">
+                <a href='/about'>About</a>
+                <a href='/portfolio'>Portfolio</a>
+                <a href='/contact'>Contact</a>
+            </div>
+            <div className="footer-icons">
+                <a href='https://github.com/fab-labo' target='_blank' rel='noopener noreferrer'>
+                    <AiOutlineGithub />
+                </a>
+                <a href='https://www.linkedin.com/in/fabriciolaboriel' target='_blank' rel='noopener noreferrer'>
+                    <AiOutlineLinkedin />
+                </a>
+            </div>
+            <p>© {new Date().getFullYear()} Fabricio Laboriel. All rights reserved.</p>
         </footer>
-    )
+    );
 }
 
 export default Footer;

@@ -1,0 +1,60 @@
+/* 🔹 Portfolio Container */
+.portfolio-container {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 🔹 Portfolio Title */
+.portfolio-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #1d1d1f;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* 🔹 Portfolio Grid */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* 🔹 Portfolio Cards */
+.card-container {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card-container:hover {
+  transform: scale(1.03);
+}
+
+/* 🔹 Project Image */
+.project-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* 🔹 Project Title */
+.project-link h3 {
+  color: black;
+  text-decoration: none;
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 768px) {
+  .portfolio-grid {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}

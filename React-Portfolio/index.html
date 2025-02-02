@@ -5,6 +5,32 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React</title>
+
+    <style>
+      /* Reset margins and padding */
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+
+      /* Ensure full height for scrolling */
+      html, body {
+          height: auto;
+          min-height: 100vh;
+          width: 100%;
+          overflow-y: visible !important; /* ✅ Enables scrolling */
+          display: block;
+      }
+
+      /* Prevent navbar overlap */
+      body {
+          padding-top: 80px; /* ✅ Pushes content below navbar */
+          display: flex;
+          flex-direction: column;
+          min-height: 100vh;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>

@@ -1,0 +1,141 @@
+/* 🔹 Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* 🔹 Navbar Container */
+.navbar {
+    width: 100%;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.85); /* Apple Glassmorphism */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 10px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* ✅ Moves with content */
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+}
+
+/* 🔹 Navbar Logo (Your Name) */
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #1d1d1f; /* Apple's dark text */
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-brand:hover {
+    color: #007aff; /* Apple Blue */
+}
+
+/* 🔹 Navbar Links */
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #555;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* 🔹 Apple Hover Effect */
+.nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #007aff; /* Apple Blue */
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: #007aff;
+}
+
+/* 🔹 Active Link */
+.nav-link-active {
+    color: #007aff;
+    font-weight: 600;
+}
+
+/* 🔹 Mobile Menu (Hidden by Default) */
+.mobile-menu {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transform: translateY(-200%);
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* 🔹 Show Mobile Menu */
+.mobile-menu.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* 🔹 Mobile Menu Links */
+.mobile-menu a {
+    text-decoration: none;
+    color: #1d1d1f;
+    display: block;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    transition: background 0.3s ease-in-out;
+}
+
+.mobile-menu a:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+/* 🔹 Hamburger Menu Icon */
+.menu-icon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu-icon:hover {
+    transform: scale(1.1);
+}
+
+/* 🔹 Responsive Navbar (For Mobile) */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .menu-icon {
+        display: block;
+    }
+
+    .mobile-menu {
+        display: flex;
+        flex-direction: column;
+    }
+}
